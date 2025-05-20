@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  title: API Caramblagues™
+  version: 1.0.0
+  description: Une API REST pour gérer des blagues façon Carambar.
+
+paths:
+  /blagues:
+    get:
+      summary: Récupère toutes les blagues
+      responses:
+        '200':
+          description: Liste de toutes les blagues
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Blague'
+
+    post:
+      summary: Ajoute une nouvelle blague
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Blague'
+      responses:
+        '201':
+          description: Blague ajoutée avec succès
+
+  /blagues/{id}:
+    get:
+      summary: Récupère une blague spécifique par ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Blague trouvée
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blague'
+        '404':
+          description: Blague non trouvée
+
+  /blagues/random:
+    get:
+      summary: Récupère une blague aléatoire
+      responses:
+        '200':
+          description: Une blague aléatoire
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blague'
+
+components:
+  schemas:
+    Blague:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        question:
+          type: string
+          example: Quelle est la femelle du hamster ?
+        answer:
+          type: string
+          example: L'Amsterdam

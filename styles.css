@@ -1,0 +1,53 @@
+body {
+  font-family: 'Fredoka One', cursive;
+  background-color: #FFEB3B;
+  color: #333;
+  margin: 0;
+  text-align: center;
+  padding: 0 20px;
+}
+
+header {
+  padding: 20px 0;
+}
+
+.logo {
+  width: 200px;
+  margin-right: 150rem;
+}
+
+h1 {
+  color: #D32F2F;
+  font-size: 2.5em;
+  margin-top: 100px;
+}
+
+button {
+  background-color: #F44336;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #D32F2F;
+}
+
+#joke-container {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: #666;
+}
